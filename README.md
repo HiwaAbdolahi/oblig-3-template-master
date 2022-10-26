@@ -2,7 +2,7 @@
 
 Denne oppgaven er en innlevering i Algoritmer og Datastrukturer. 
 Oppgaven er levert av følgende student:
-* Navn Navnesen, S123456, s123456@oslomet.no
+* Navn: Hiwa Abdolahi, s364547, s364547@oslomet.no Github username: HiwaAbdolahi
 
 
 # Oppgavebeskrivelse
