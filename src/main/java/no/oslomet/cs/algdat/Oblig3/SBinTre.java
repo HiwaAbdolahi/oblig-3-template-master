@@ -83,7 +83,7 @@ public class SBinTre<T> {
     }
 
     public boolean leggInn(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        throw new UnsupportedOperationException("ikke lov med nullverdier!!!");
     }
 
     public boolean fjern(T verdi) {
