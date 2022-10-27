@@ -156,6 +156,21 @@ public class SBinTre<T> {
         return antall;
     }
 
+
+                                //-------------Oppgave 3---------------\\
+
+    //kompendietskode : 5.1.7 h
+    private static <T> Node<T> førstePostorden(Node<T> p) {
+
+
+
+    }
+
+    private static <T> Node<T> nestePostorden(Node<T> p) {
+        throw new UnsupportedOperationException("Ikke kodet ennå!");
+    }
+
+
     public boolean fjern(T verdi) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
@@ -170,13 +185,9 @@ public class SBinTre<T> {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
-    private static <T> Node<T> førstePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
-    }
 
-    private static <T> Node<T> nestePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
-    }
+
+
 
     public void postorden(Oppgave<? super T> oppgave) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
