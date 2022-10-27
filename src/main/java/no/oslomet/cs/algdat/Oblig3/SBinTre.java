@@ -3,6 +3,7 @@ package no.oslomet.cs.algdat.Oblig3;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Objects;
 import java.util.StringJoiner;
 
 public class SBinTre<T> {
@@ -88,7 +89,7 @@ public class SBinTre<T> {
 
 
     public boolean leggInn(T verdi) {
-        throw new UnsupportedOperationException("ikke lov med nullverdier!!!");
+        Objects.requireNonNull(verdi, "ikke lov med nullverdier!!!");
 
 
         if (rot == null) {  //når treet er Tom!
@@ -112,7 +113,7 @@ public class SBinTre<T> {
                 }
             }
 
-            cmp = comp.compare(verdi, q.verdi);
+            cmp = comp.compare(verdi, q.verdi); //skal finne plassen
 
             if (cmp == -1)  {
                 q.venstre = new Node<>(verdi, q);
