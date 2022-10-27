@@ -176,9 +176,31 @@ public class SBinTre<T> {
         }
     }
 
-
     private static <T> Node<T> nestePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        if (p.forelder == null) {
+            return null;
+        }
+
+        if (p == p.forelder.høyre)  {
+            return p.forelder;
+        }
+
+        else if (p == p.forelder.venstre)   {
+
+                if (p.forelder.høyre == null)   {
+                    return p.forelder;
+                }
+
+                else
+                {
+                    return førstePostorden(p.forelder.høyre);
+                }
+        }
+        else
+        {
+            return null;
+        }
     }
 
 
