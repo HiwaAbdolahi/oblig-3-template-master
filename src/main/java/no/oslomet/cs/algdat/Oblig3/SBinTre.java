@@ -129,6 +129,33 @@ public class SBinTre<T> {
 
     }
 
+                                //------------Oppgave 2----------------\\
+
+    public int antall(T verdi) {
+
+        int antall = 0; //hvis verdien skal ikke finnet skal 0 returneres;
+
+        if (!tom() && inneholder(verdi))    { //om listen er tom og verdien finnes!
+
+            Node<T> p = rot;
+
+            while (p != null)   {   //går gjennom listen så lenge verdien p er ikke null
+                int cmp = comp.compare(verdi, p.verdi);
+                     if (cmp < 0) {
+                         p = p.venstre;
+                     }
+                        else if (cmp > 0){
+                            p = p.høyre;
+                     }
+                            else { // fant verdien og ligge mot høyre
+                                antall++;
+                                p = p.høyre;
+                     }
+            }
+        }
+        return antall;
+    }
+
     public boolean fjern(T verdi) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
@@ -137,9 +164,7 @@ public class SBinTre<T> {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
-    public int antall(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
-    }
+
 
     public void nullstill() {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
