@@ -222,12 +222,23 @@ public class SBinTre<T> {
         oppgave.utførOppgave(p.verdi);
     }
 
+
     public void postordenRecursive(Oppgave<? super T> oppgave) {
         postordenRecursive(rot, oppgave);
     }
 
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        if (p == null)  {
+            return;
+        }
+            // først kall for venstre barn rekursiv og så kall for høyre barn rekursiv
+
+        postordenRecursive(p.venstre, oppgave);
+
+        postordenRecursive(p.høyre, oppgave);
+
+        oppgave.utførOppgave(p.verdi);
     }
 
 
