@@ -82,8 +82,50 @@ public class SBinTre<T> {
         return antall == 0;
     }
 
+
+                                //------------Oppgave 1----------------\\\
+
+
+
     public boolean leggInn(T verdi) {
         throw new UnsupportedOperationException("ikke lov med nullverdier!!!");
+
+
+        if (rot == null) {  //når treet er Tom!
+
+            rot = new Node<>(verdi,null);
+        }
+        else {                      //er ikke Tom!
+            Node<T> p = rot;
+
+            Node<T> q = null;
+            int cmp;
+
+            while (p != null)   {
+                q = p;
+                cmp = comp.compare(verdi, p.verdi);
+                if (cmp < 0)    {
+                    p = p.venstre;
+                }
+                else {
+                    p = p.høyre;
+                }
+            }
+
+            cmp = comp.compare(verdi, q.verdi);
+
+            if (cmp == -1)  {
+                q.venstre = new Node<>(verdi, q);
+            }
+            else {
+                q.høyre = new Node<>(verdi, q);
+            }
+        }
+
+        endringer++;
+        antall++;
+        return true;
+
     }
 
     public boolean fjern(T verdi) {
