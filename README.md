@@ -53,4 +53,27 @@ jeg krysset det binære treet i postordre-rekkefølge og ga ut verdiene ved
 Når pekeren p når 0, etableres det grunnleggende tilfellet.
 
 
-Oppgave 5
+//--------------Oppgave5-----------------\\
+
+Jeg laget en ArrayList og en kø i øvelse 5 for serialize()-metoden.
+Hver gang en node ble lagt til ArrayList og dermed slettet fra køen, 
+ble gjeldende peker flyttet ved hjelp av køen til den påfølgende noden 
+i treet i nivårekkefølgen. Når det ikke er flere noder igjen, vil køen 
+bli tom og while-løkken vil fortsette å kjøre.
+LeggInn()-metoden og en for-løkke brukes i deserialize()-metoden for 
+å sette inn verdiene fra en ArrayList i et tomt binært tre.
+
+
+//--------------Oppgave6-----------------\\
+Det ble utviklet tre metoder for oppgave 6. 
+For å finne ønsket T-verdi for den første metoden ble det benyttet boolean fjern(T-verdi)
+, programkode 5.2.8 d) fra kompendiet.
+Deretter bestemmes det om noden har null, ett eller to barn. I de to første tilfellene 
+flyttes de overordnede og underordnede pekerne i samsvar med om et barn er til høyre 
+eller venstre. For å holde sorteringen i treet konsekvent, hvis noden inneholder to barn,
+må vi finne den neste. fjern(value)-metoden kombineres med en teller ved 
+bruk av fjernAll()-metoden slik at telleren til slutt returneres sammen 
+med antall duplikater som er eliminert.
+En privat metode kalt nullstill er lagt til og brukes til å generere den rekursive 
+funksjonen nullstill(), som godtar en node som en parameter. 
+Noder elimineres på denne måten i følgende rekkefølge: barn, deretter forelder.

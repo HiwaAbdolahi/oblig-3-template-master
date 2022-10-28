@@ -6,6 +6,8 @@ import java.util.Comparator;
 public class Main {
     public static void main(String[] args) {
 
+
+
        // Et eksempel på hvordan det skal virke:
         int[] a = {4,7,2,9,4,10,8,7,4,6,1};
         SBinTre<Integer> tre = new SBinTre<>(Comparator.naturalOrder());
