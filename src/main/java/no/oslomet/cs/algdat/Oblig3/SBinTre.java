@@ -275,7 +275,13 @@ public class SBinTre<T> {
     }
 
     static <K> SBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        SBinTre<K> tree = new SBinTre<>(c);
+
+        for (int i = 0; i < data.size(); i++)   {
+            tree.leggInn(data.get(i));
+        }
+        return tree;
     }
 
 
