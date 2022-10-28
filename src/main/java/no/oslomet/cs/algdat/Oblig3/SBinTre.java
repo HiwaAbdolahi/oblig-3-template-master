@@ -242,6 +242,28 @@ public class SBinTre<T> {
     }
 
 
+
+
+
+
+
+                            //-------------------Oppgave5-----------------\\
+
+
+    public ArrayList<T> serialize() {
+        throw new UnsupportedOperationException("Ikke kodet ennå!");
+    }
+
+    static <K> SBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
+        throw new UnsupportedOperationException("Ikke kodet ennå!");
+    }
+
+
+
+
+
+
+
     public boolean fjern(T verdi) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
@@ -264,13 +286,7 @@ public class SBinTre<T> {
 
 
 
-    public ArrayList<T> serialize() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
-    }
 
-    static <K> SBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
-    }
 
 
 } // ObligSBinTre
