@@ -51,3 +51,6 @@ For de rekursive metodene kalte jeg venstre og høyre barn rekursivt før
 jeg krysset det binære treet i postordre-rekkefølge og ga ut verdiene ved 
 å bruke utførOppgave.
 Når pekeren p når 0, etableres det grunnleggende tilfellet.
+
+
+Oppgave 5
