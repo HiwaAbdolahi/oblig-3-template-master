@@ -412,7 +412,7 @@ public class SBinTre<T> {
         antall = 0;
     }
 
-    private void nullsrtill(Node<T> node)   {
+    private void nullstill(Node<T> node)   {
 
         if (node.venstre != null) {
             nullstill(node.venstre);
