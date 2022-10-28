@@ -303,6 +303,7 @@ public class SBinTre<T> {
         if (verdi == null)  {
             return false;
         }
+
         Node<T> node = rot;
         Node<T> forelder = null;
 
@@ -311,7 +312,6 @@ public class SBinTre<T> {
             int cmp = comp.compare(verdi, node.verdi);
                 if (cmp < 0)    {
                     forelder = node;
-                    node = node.venstre;
                     node = node.venstre;
                 }
                 else if (cmp > 0)
@@ -361,7 +361,7 @@ public class SBinTre<T> {
                 Node<T> forelderSub = node;
                 Node<T> nodeSub = node.høyre;
 
-                while (forelderSub.venstre != null) {
+                while (nodeSub.venstre != null) {
                     forelderSub = nodeSub;
                     nodeSub = nodeSub.venstre;
                 }
