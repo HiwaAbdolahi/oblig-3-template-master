@@ -263,10 +263,13 @@ public class SBinTre<T> {
             nåværende = kø.remove();
                 if (nåværende.venstre != null)  {
                     tabell.add(nåværende.venstre.verdi);
-                    kø.add(nåværende.høyre);
+                    kø.add(nåværende.venstre);
                 }
 
-
+                        if (nåværende.høyre != null)    {
+                                tabell.add(nåværende.høyre.verdi);
+                                kø.add(nåværende.høyre);
+                        }
 
         }
         return tabell;
