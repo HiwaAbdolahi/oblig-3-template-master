@@ -292,9 +292,98 @@ public class SBinTre<T> {
 
 
 
+                    //----------------------Oppgave 6 --------------\\
+
+
+
+    //Kode fra kompendiet 5.2.8 d og for å bytte pekeren til forelder lagte jeg if_setning.
 
     public boolean fjern(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        if (verdi == null)  {
+            return false;
+        }
+        Node<T> node = rot;
+        Node<T> forelder = null;
+
+        while (node != null)    { //finner verdien ved while løkke
+            //sammenligner
+            int cmp = comp.compare(verdi, node.verdi);
+                if (cmp < 0)    {
+                    forelder = node;
+                    node = node.venstre;
+                    node = node.venstre;
+                }
+                else if (cmp > 0)
+                {
+                    forelder = node;
+                    node = node.høyre;
+                }
+                else break;
+        }
+
+        //verdien er null
+        if (node == null)   {
+            return false;
+        }
+                //har en eller ingen barn
+            if (node.venstre == null || node.høyre == null) {
+                Node<T> barna;
+
+                //skal finne posisjonen til barna og plassere den til venstre
+                if (node.venstre != null)   {
+                    barna = node.venstre;
+                }
+                else
+                {
+                    barna = node.høyre;
+                }
+
+                if (barna != null)  {
+                    barna.forelder = forelder;
+                }
+
+                if (node == rot)    {
+                    rot = barna;
+                }
+                else if (node == forelder.venstre)  {
+                    forelder.venstre = barna;
+                }
+
+                else
+                {
+                    forelder.høyre = barna;
+                }
+            }
+
+            else
+            {
+                Node<T> forelderSub = node;
+                Node<T> nodeSub = node.høyre;
+
+                while (forelderSub.venstre != null) {
+                    forelderSub = nodeSub;
+                    nodeSub = nodeSub.venstre;
+                }
+
+                node.verdi = nodeSub.verdi;
+
+                if (forelderSub != node)    {
+                    forelderSub.venstre = nodeSub.høyre;
+                }
+                else
+                {
+                    forelderSub.høyre = nodeSub.høyre;
+                }
+
+            }
+
+            antall--;
+            return true;
+
+
+
+
     }
 
     public int fjernAlle(T verdi) {
@@ -306,6 +395,13 @@ public class SBinTre<T> {
     public void nullstill() {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
+
+
+
+
+
+
+
 
 
 
